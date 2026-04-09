@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logan Reese | Software Developer</title>
   <meta name="description" content="Logan Reese - Software Developer, U.S. Air Force Veteran, Federal Contractor. Secret Clearance. Columbus, OH." />
+  <link rel="icon" type="image/png" href="doom2.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Exo+2:wght@300;400;700&display=swap" rel="stylesheet" />
 
@@ -200,11 +201,36 @@
     .edu-date { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
 
     /* CONTACT */
-    #contact { background: var(--bg2); text-align: center; }
-    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
-    .contact-link { display: flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: 0.85rem; color: #888; border: 1px solid rgba(255,255,255,0.08); padding: 0.75rem 1.4rem; border-radius: 2px; transition: all 0.25s; }
+    #contact { background: var(--bg2); }
+    .contact-tagline { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); margin-bottom: 2.5rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-social { display: flex; flex-direction: column; gap: 0.8rem; }
+    .contact-social-label { font-family: var(--mono); font-size: 0.72rem; color: var(--green); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .contact-link { display: flex; align-items: center; gap: 0.7rem; font-family: var(--mono); font-size: 0.85rem; color: #888; border: 1px solid rgba(255,255,255,0.08); padding: 0.75rem 1.2rem; border-radius: 2px; transition: all 0.25s; }
     .contact-link:hover { color: var(--green); border-color: var(--green-d); box-shadow: var(--glow-g); }
-    .contact-tagline { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); margin-top: 1rem; }
+    /* EMAIL FORM */
+    .contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
+    .form-label { font-family: var(--mono); font-size: 0.68rem; color: var(--purple); letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 0.3rem; }
+    .form-input, .form-textarea {
+      width: 100%; background: var(--bg3); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px; color: var(--white); font-family: var(--body); font-size: 0.9rem;
+      padding: 0.65rem 0.9rem; transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+      resize: none;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--purple-d); box-shadow: 0 0 0 2px rgba(124,58,237,0.15); }
+    .form-textarea { height: 120px; line-height: 1.6; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .btn-send {
+      font-family: var(--display); font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase; padding: 0.8rem 2rem;
+      border-radius: 2px; cursor: pointer; border: none; width: 100%;
+      background: var(--purple-d); color: #fff; transition: all 0.25s; margin-top: 0.2rem;
+    }
+    .btn-send:hover { background: var(--purple); box-shadow: var(--glow-p); }
+    .btn-send:active { transform: scale(0.98); }
+    .form-success { font-family: var(--mono); font-size: 0.8rem; color: var(--green); margin-top: 0.5rem; opacity: 0; transition: opacity 0.3s; }
+    .form-success.show { opacity: 1; }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
 
     /* FOOTER */
     footer { background: var(--bg); border-top: 1px solid rgba(255,255,255,0.05); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -264,7 +290,7 @@
       </div>
       <p class="hero-summary">
         U.S. Air Force Veteran. Mechanic turned full-stack developer.
-        Federal contractor with <strong>Secret Clearance</strong> building secure systems for DoD.
+        Federal contractor with Secret Clearance building secure systems for DoD.
         Columbus, OH - available remote.
       </p>
       <div class="hero-cta">
@@ -289,8 +315,8 @@
       <div class="about-grid">
         <div class="about-text">
           <p>I'm a self-driven software developer who traded wrenches for keyboards after six years maintaining KC-135 tankers for the U.S. Air Force. That background gave me something most devs don't have... a deep respect for systems that <em>cannot</em> fail.</p>
-          <p>Today I modernize legacy federal systems for <strong>Department of Defense</strong> clients, turning decades-old Perl CGI into clean, maintainable Python. I love tinkering, gaming, and figuring out better ways to think about hard problems.</p>
-          <p>Father of <strong>4</strong>. Veteran. Lifelong learner. Currently finishing my B.S. in Software Engineering at WGU while shipping production code for DoD.</p>
+          <p>Today I modernize legacy federal systems for Department of Defense clients, turning decades-old Perl CGI into clean, maintainable Python. I love tinkering, gaming, and figuring out better ways to think about hard problems.</p>
+          <p>Father of 4. Veteran. Lifelong learner. Currently finishing my B.S. in Software Engineering at WGU while shipping production code for DoD.</p>
           <div class="about-tags">
             <span class="tag tag-green">Python</span><span class="tag tag-green">Flask</span>
             <span class="tag tag-green">Oracle DB</span><span class="tag tag-purple">DoD Contractor</span>
@@ -305,10 +331,8 @@
             <div class="panel-item"><span class="icon">🛡️</span> U.S. Secret Clearance Active</div>
             <div class="panel-item"><span class="icon">✈️</span> USAF Veteran</div>
             <div class="panel-item"><span class="icon">🎓</span> B.S. Software Engineering (Dec 2026)</div>
-            <div class="panel-item"><span class="icon">🎮</span> Gamer, Tinkerer, Lover</div>
+            <div class="panel-item"><span class="icon">🎮</span> Gamer, Tinkerer, Nerd, Mechanic</div>
             <div class="panel-item"><span class="icon">👨‍👧‍👦</span> Father of 4</div>
-            <div class="panel-item"><span class="icon">📧</span> lreese2112@gmail.com</div>
-            <div class="panel-item"><span class="icon">📱</span> 740-412-6916</div>
           </div>
         </div>
       </div>
@@ -468,15 +492,7 @@
         <iframe id="strudel-frame" src="" width="100%" height="420" frameborder="0"
           allow="autoplay; microphone" style="display:block;background:#0e0e0e;"></iframe>
       </div>
-      <div class="strudel-presets">
-        <span style="font-family:var(--mono);font-size:0.7rem;color:var(--muted);">// presets:</span>
-        <button class="preset-btn active" data-preset="default">default</button>
-        <button class="preset-btn" data-preset="trap">trap</button>
-        <button class="preset-btn" data-preset="jungle">jungle</button>
-        <button class="preset-btn" data-preset="techno">techno</button>
-        <button class="preset-btn" data-preset="ambient">ambient</button>
-      </div>
-      <p class="strudel-note">⚠ Switching presets reloads the player - hit Play again after selecting.</p>
+      <p class="strudel-note">⚠ Stop, update then play. Try changing the notes.</p>
       <p class="strudel-hint">
         <span>s()</span> = sample &nbsp;·&nbsp; <span>note()</span> = pitch &nbsp;·&nbsp;
         <span>bd/sd/hh/oh</span> = drums &nbsp;·&nbsp; <span>.bank("RolandTR808")</span> = drum machine &nbsp;·&nbsp;
@@ -588,11 +604,49 @@
       <p class="section-tag">Contact</p>
       <h2 class="section-title">Let's <span>Connect</span></h2>
       <p class="contact-tagline">// open to federal contracts, remote dev roles, and interesting builds</p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:lreese2112@gmail.com"><span>📧</span> lreese2112@gmail.com</a>
-        <a class="contact-link" href="tel:7404126916"><span>📱</span> 740-412-6916</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/logibear/" target="_blank" rel="noopener"><span>💼</span> LinkedIn</a>
-        <a class="contact-link" href="https://github.com/LogiDaBear" target="_blank" rel="noopener"><span>🐙</span> GitHub</a>
+
+      <div class="contact-grid">
+
+        <!-- EMAIL FORM -->
+        <div>
+          <div class="contact-form">
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="cf-name">Your Name</label>
+                <input class="form-input" id="cf-name" type="text" placeholder="John Doe" autocomplete="off" />
+              </div>
+              <div>
+                <label class="form-label" for="cf-email">Your Email</label>
+                <input class="form-input" id="cf-email" type="email" placeholder="you@example.com" autocomplete="off" />
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="cf-subject">Subject</label>
+              <input class="form-input" id="cf-subject" type="text" placeholder="Let's work together" />
+            </div>
+            <div>
+              <label class="form-label" for="cf-message">Message</label>
+              <textarea class="form-textarea" id="cf-message" placeholder="What's on your mind..."></textarea>
+            </div>
+            <button class="btn-send" id="cf-submit">&#9993; Send Me An Email</button>
+            <p class="form-success" id="cf-success">// email client opened - see you on the other side ✓</p>
+          </div>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="contact-social">
+          <p class="contact-social-label">// find me here</p>
+          <a class="contact-link" href="https://www.linkedin.com/in/logibear/" target="_blank" rel="noopener">
+             LinkedIn
+          </a>
+          <a class="contact-link" href="https://github.com/LogiDaBear" target="_blank" rel="noopener">
+             GitHub
+          </a>
+          <a class="contact-link" href="Reese_Resume_2026.pdf" download="Logan_Reese_Resume.pdf">
+             Download Resume
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -603,9 +657,9 @@
     <div class="footer-mono" id="uptime-display">// system online</div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // TYPED TITLE
-    const titles = ['Software Developer','Federal Contractor','Python Engineer','DoD Modernizer','USAF Veteran','Full-Stack Dev'];
+    const titles = ['Software Developer','Federal Contractor','Python Engineer','Tech Modernizer','USAF Veteran','Dad of 4'];
     let ti = 0, ci = 0, deleting = false;
     const tyEl = document.getElementById('typed-title');
     function type() {
@@ -656,6 +710,39 @@
         btn.classList.add('active');
       });
     });
+
+    // CONTACT FORM - mailto handler
+    document.getElementById('cf-submit').addEventListener('click', () => {
+      const name    = document.getElementById('cf-name').value.trim();
+      const email   = document.getElementById('cf-email').value.trim();
+      const subject = document.getElementById('cf-subject').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+
+      document.getElementById('cf-name').style.borderColor    = '';
+      document.getElementById('cf-message').style.borderColor = '';
+
+      let valid = true;
+      if (!name)    { document.getElementById('cf-name').style.borderColor    = '#ef4444'; valid = false; }
+      if (!message) { document.getElementById('cf-message').style.borderColor = '#ef4444'; valid = false; }
+      if (!valid) return;
+
+      const body   = 'From: ' + name + (email ? ' <' + email + '>' : '') + '\n\n' + message;
+      const mailto = 'mailto:lreese2112@gmail.com'
+        + '?subject=' + encodeURIComponent(subject || 'Portfolio Contact')
+        + '&body='    + encodeURIComponent(body);
+
+      window.location.href = mailto;
+
+      const success = document.getElementById('cf-success');
+      success.classList.add('show');
+      setTimeout(() => success.classList.remove('show'), 5000);
+    });
+
+    ['cf-name','cf-message'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function() { this.style.borderColor = ''; });
+    });
+
+
   </script>
 </body>
 </html>
