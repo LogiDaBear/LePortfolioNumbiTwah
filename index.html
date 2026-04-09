@@ -10,8 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Exo+2:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  <!-- Strudel live coding embed -->
-  <script src="https://unpkg.com/@strudel/embed@latest"></script>
 
 <style>
     /* ── VARIABLES ─────────────────────────────────────── */
@@ -810,7 +808,7 @@
     .terminal-prompt .p-green { color: var(--green); }
     .terminal-prompt .p-purple { color: var(--purple); }
     .terminal-prompt .p-white { color: var(--white); }
-</style>
+  </style>
 </head>
 <body class="grid-bg">
 
@@ -834,7 +832,7 @@
     <!-- REPLACE THIS COMMENT WITH YOUR GOOGLE ADSENSE LEADERBOARD CODE -->
     <div class="ad-slot ad-leaderboard">
       <span>Advertisement</span>
-      <span class="ad-slot-label">728×90 — Leaderboard · Google AdSense Slot</span>
+      <span class="ad-slot-label">728×90  -  Leaderboard · Google AdSense Slot</span>
     </div>
   </div>
 
@@ -850,8 +848,8 @@
         <span class="cursor"></span>
       </div>
       <p class="hero-summary">
-        <strong>U.S. Air Force Veteran.</strong> Mechanic turned full-stack developer.
-        Federal contractor with <strong>Secret Clearance</strong> building secure systems for DoD.
+        U.S. Air Force Veteran. Mechanic turned full-stack developer.
+        Federal contractor with Secret Clearance building secure systems for DoD.
         Columbus, OH &mdash; available remote.
       </p>
       <div class="hero-cta">
@@ -890,17 +888,17 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm a <strong>self-driven software developer</strong> who traded wrenches for keyboards after
+            I'm a self-driven software developer who traded wrenches for keyboards after
             six years maintaining KC-135 tankers for the U.S. Air Force. That background gave me
-            something most devs don't have — a deep respect for systems that <em>cannot</em> fail.
+            something most devs don't have... a deep respect for systems that <em>cannot</em> fail.
           </p>
           <p>
-            Today I modernize legacy federal systems for <strong>Department of Defense</strong> clients,
+            Today I modernize legacy federal systems for Department of Defense clients,
             turning decades-old Perl CGI into clean, maintainable Python. I love
             tinkering, gaming, and figuring out better ways to think about hard problems.
           </p>
           <p>
-            Father of <strong>4</strong>. Veteran. Lifelong learner. Currently finishing my B.S. in
+            Father of 4. Veteran. Lifelong learner. Currently finishing my B.S. in
             Software Engineering at WGU while shipping production code for DoD.
           </p>
           <div class="about-tags">
@@ -919,9 +917,9 @@
             <h3>// quick.info</h3>
             <div class="panel-item"><span class="icon">📍</span> Columbus, OH (Remote Ready)</div>
             <div class="panel-item"><span class="icon">🛡️</span> U.S. Secret Clearance Active</div>
-            <div class="panel-item"><span class="icon">✈️</span> USAF — Honorable Discharge</div>
+            <div class="panel-item"><span class="icon">✈️</span> USAF Veteran</div>
             <div class="panel-item"><span class="icon">🎓</span> B.S. Software Engineering (Dec 2026)</div>
-            <div class="panel-item"><span class="icon">🎮</span> Gamer, Tinkerer, Car Guy</div>
+            <div class="panel-item"><span class="icon">🎮</span> Gamer, Tinkerer, Lover</div>
             <div class="panel-item"><span class="icon">👨‍👧‍👦</span> Father of 4</div>
             <div class="panel-item"><span class="icon">📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="177b65727264722526262557707a767e7b3974787a">[email&#160;protected]</a></div>
             <div class="panel-item"><span class="icon">📱</span> 740-412-6916</div>
@@ -1080,7 +1078,7 @@
             <ul class="exp-bullets">
               <li>Led maintenance and inspection programs for a fleet of 63 KC-135 Stratotanker aircraft.</li>
               <li>Managed technical documentation, equipment readiness, and cross-disciplinary team operations.</li>
-              <li>Honorable discharge — awarded for leadership and technical excellence.</li>
+              <li>Honorable discharge  -  awarded for leadership and technical excellence.</li>
             </ul>
           </div>
         </div>
@@ -1095,7 +1093,7 @@
       <p class="section-tag">Live Code</p>
       <h2 class="section-title">Set the <span>Vibe</span></h2>
       <p style="color:#888; font-size:0.92rem; margin-bottom:1.6rem; max-width:600px;">
-        A live-coding drum machine running right here in the browser — powered by
+        A live-coding drum machine running right here in the browser  -  powered by
         <a href="https://strudel.cc" target="_blank" rel="noopener" style="color:var(--purple);">Strudel</a>.
         Hit <kbd style="background:var(--bg3);border:1px solid var(--muted);padding:1px 5px;border-radius:2px;font-size:0.8rem;">▶ Play</kbd>
         to start, then edit the code live. Hit <kbd style="background:var(--bg3);border:1px solid var(--muted);padding:1px 5px;border-radius:2px;font-size:0.8rem;">Ctrl+Enter</kbd> to evaluate changes.
@@ -1108,40 +1106,18 @@
             <span class="s-dot s-dot-y"></span>
             <span class="s-dot s-dot-g"></span>
           </div>
-          <span class="strudel-label">// portfolio.beat() — live coding environment</span>
+          <span class="strudel-label">// portfolio.beat()  -  live coding environment</span>
           <span class="strudel-label" style="color:var(--green);">strudel v2 ●</span>
         </div>
 
-        <strudel-repl>
-          <!--
-// 🤖 Logan's portfolio beat — edit me live!
-// Ctrl+Enter to re-evaluate. Have fun.
-setcps(0.75)
-
-stack(
-  // Kick pattern
-  s("bd ~ [~ bd] ~").bank("RolandTR808").gain(1),
-
-  // Snare
-  s("~ sd ~ sd").bank("RolandTR808").gain(0.85),
-
-  // Hihat — panned with sine wave
-  s("hh*8").bank("RolandTR808").gain(0.4)
-    .pan(sine.range(-0.6, 0.6)),
-
-  // Open hat
-  s("~ ~ oh ~").bank("RolandTR808").gain(0.65),
-
-  // Bass synth line
-  note("<c2 eb2 f2 g2>*2")
-    .s("sawtooth")
-    .lpf("<600 900 400 750>")
-    .gain(0.22)
-    .room(0.5)
-    .delay(0.2)
-)
-          -->
-        </strudel-repl>
+        <iframe id="strudel-frame"
+          src=""
+          width="100%"
+          height="420"
+          frameborder="0"
+          allow="autoplay; microphone"
+          style="display:block; background:#0e0e0e;"
+        ></iframe>
       </div>
 
       <div class="strudel-presets">
@@ -1232,7 +1208,7 @@ stack(
           </div>
           <div class="project-name">This Portfolio</div>
           <div class="project-status status-live">● Live</div>
-          <p class="project-desc">Hand-crafted portfolio site with zero frameworks — pure HTML, CSS, and vanilla JS. Custom terminal aesthetic, CSS animations, Google AdSense ad slots, and full mobile responsiveness.</p>
+          <p class="project-desc">Hand-crafted portfolio site with zero frameworks, pure HTML, CSS, and vanilla JS. Custom terminal aesthetic, CSS animations, Google AdSense ad slots, and full mobile responsiveness.</p>
           <div class="project-stack">
             <span class="p-pill">HTML5</span>
             <span class="p-pill">CSS3</span>
@@ -1262,6 +1238,24 @@ stack(
 
         <div class="project-card">
           <div class="project-header">
+            <span class="project-icon">🔥</span>
+            <div class="project-links">
+              <a class="project-link" href="https://phxxrising.org/" target="_blank" rel="noopener">Live ↗</a>
+            </div>
+          </div>
+          <div class="project-name">PHXX Rising</div>
+          <div class="project-status status-live">● Live - Pro Bono</div>
+          <p class="project-desc">Built pro bono for Phoenixx Enterprises. A Columbus, OH community safety and risk mitigation collective. Their mission: reduce harm, increase safety literacy, and empower communities through education and community-centered protective services.</p>
+          <div class="project-stack">
+            <span class="p-pill">Web Dev</span>
+            <span class="p-pill">Community</span>
+            <span class="p-pill">Columbus, OH</span>
+            <span class="p-pill">Pro Bono</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
             <span class="project-icon">💡</span>
             <div class="project-links">
               <a class="project-link" href="https://github.com/LogiDaBear" target="_blank" rel="noopener">GitHub ↗</a>
@@ -1269,7 +1263,7 @@ stack(
           </div>
           <div class="project-name">Something Cool (WIP)</div>
           <div class="project-status status-wip">⬡ Tinkering</div>
-          <p class="project-desc">Always something brewing in the lab. Check the GitHub for the latest experiments — automation tools, game mods, home-lab projects, or whatever rabbit hole I'm currently down.</p>
+          <p class="project-desc">Always something brewing in the lab. Check the GitHub for the latest experiments: automation tools, game mods, home-lab projects, or whatever rabbit hole I'm currently down.</p>
           <div class="project-stack">
             <span class="p-pill">???</span>
             <span class="p-pill">Linux</span>
@@ -1385,23 +1379,67 @@ stack(
     }
     uptime();
 
-    // STRUDEL PRESETS
-    const presets = {
-      reset: "setcps(0.75)\nstack(\n  s(\"bd ~ [~ bd] ~\").bank(\"RolandTR808\").gain(1),\n  s(\"~ sd ~ sd\").bank(\"RolandTR808\").gain(0.85),\n  s(\"hh*8\").bank(\"RolandTR808\").gain(0.4).pan(sine.range(-0.6,0.6)),\n  s(\"~ ~ oh ~\").bank(\"RolandTR808\").gain(0.65),\n  note(\"<c2 eb2 f2 g2>*2\").s(\"sawtooth\").lpf(\"<600 900 400 750>\").gain(0.22).room(0.5).delay(0.2)\n)",
-      trap:  "setcps(0.5)\nstack(\n  s(\"bd ~ ~ ~, ~ ~ bd ~\").bank(\"RolandTR808\").gain(1.1),\n  s(\"~ ~ sd ~\").bank(\"RolandTR808\").gain(0.9),\n  s(\"hh*16\").bank(\"RolandTR808\").gain(0.3).velocity(rand),\n  s(\"~ ~ ~ oh\").bank(\"RolandTR808\").gain(0.7)\n)",
-      jungle:"setcps(0.88)\nstack(\n  s(\"bd ~ ~ bd ~ ~ bd ~\").bank(\"RolandTR909\").gain(1),\n  s(\"~ sd ~ ~ ~ sd ~ ~\").bank(\"RolandTR909\").gain(0.9),\n  s(\"hh*16\").bank(\"RolandTR909\").gain(0.35).velocity(rand),\n  s(\"oh ~ ~ ~ oh ~ ~ ~\").bank(\"RolandTR909\").gain(0.6).room(0.4)\n)",
-      techno:"setcps(0.85)\nstack(\n  s(\"bd*4\").bank(\"RolandTR909\").gain(1.1),\n  s(\"~ ~ sd ~, ~ sd ~ ~\").bank(\"RolandTR909\").gain(0.8),\n  s(\"hh*8\").bank(\"RolandTR909\").gain(0.4).pan(sine.range(-0.8,0.8).slow(2))\n)",
-      ambient:"setcps(0.4)\nstack(\n  s(\"bd ~ ~ ~ ~ ~ ~ ~\").bank(\"RolandTR808\").gain(0.6).room(0.9),\n  note(\"<c4 eb4 g4 bb4> ~ <f4 ab4 c5> ~\").s(\"sine\").gain(0.3).room(0.95).delay(0.6).slow(2)\n)"
+    // STRUDEL IFRAME - encode patterns as base64 URL hashes
+    const strudelPatterns = {
+      reset: `setcps(0.75)
+stack(
+  s("bd ~ [~ bd] ~").bank("RolandTR808").gain(1),
+  s("~ sd ~ sd").bank("RolandTR808").gain(0.85),
+  s("hh*8").bank("RolandTR808").gain(0.4).pan(sine.range(-0.6, 0.6)),
+  s("~ ~ oh ~").bank("RolandTR808").gain(0.65),
+  note("<c2 eb2 f2 g2>*2").s("sawtooth").lpf("<600 900 400 750>").gain(0.22).room(0.5).delay(0.2)
+)`,
+      trap: `setcps(0.5)
+stack(
+  s("bd ~ ~ ~, ~ ~ bd ~").bank("RolandTR808").gain(1.1),
+  s("~ ~ sd ~").bank("RolandTR808").gain(0.9),
+  s("hh*16").bank("RolandTR808").gain(0.3).velocity(rand),
+  s("~ ~ ~ oh").bank("RolandTR808").gain(0.7),
+  note("c1 ~ ~ ~ eb1 ~ ~ ~").s("sawtooth").lpf(300).gain(0.4).room(0.3)
+)`,
+      jungle: `setcps(0.88)
+stack(
+  s("bd ~ ~ bd ~ ~ bd ~").bank("RolandTR909").gain(1),
+  s("~ sd ~ ~ ~ sd ~ ~").bank("RolandTR909").gain(0.9),
+  s("hh*16").bank("RolandTR909").gain(0.35).velocity(rand),
+  s("oh ~ ~ ~ oh ~ ~ ~").bank("RolandTR909").gain(0.6).room(0.4),
+  note("c3 eb3 g3 bb3").fast(2).s("triangle").gain(0.2).room(0.6)
+)`,
+      techno: `setcps(0.85)
+stack(
+  s("bd*4").bank("RolandTR909").gain(1.1),
+  s("~ ~ sd ~, ~ sd ~ ~").bank("RolandTR909").gain(0.8),
+  s("hh*8").bank("RolandTR909").gain(0.4).pan(sine.range(-0.8,0.8).slow(2)),
+  s("~ oh ~ oh").bank("RolandTR909").gain(0.55).room(0.5),
+  note("c2*4").s("sawtooth").lpf(perlin.range(200,2000).slow(4)).gain(0.25).room(0.2)
+)`,
+      ambient: `setcps(0.4)
+stack(
+  s("bd ~ ~ ~ ~ ~ ~ ~").bank("RolandTR808").gain(0.6).room(0.9),
+  s("~ ~ ~ ~ sd ~ ~ ~").bank("RolandTR808").gain(0.5).room(0.9),
+  s("hh ~ hh ~ hh ~ hh ~").bank("RolandTR808").gain(0.2).room(1).delay(0.5),
+  note("<c4 eb4 g4 bb4> ~ <f4 ab4 c5> ~").s("sine").gain(0.3).room(0.95).delay(0.6).slow(2),
+  note("c2 ~ ~ eb2 ~ ~ f2 ~").s("sawtooth").lpf(200).gain(0.15).room(0.95).slow(2)
+)`
     };
+
+    function strudelUrl(code) {
+      return 'https://strudel.cc/#' + btoa(unescape(encodeURIComponent(code)));
+    }
+
+    // Load default pattern on page ready
+    const strudelFrame = document.getElementById('strudel-frame');
+    if (strudelFrame) {
+      strudelFrame.src = strudelUrl(strudelPatterns.reset);
+    }
 
     document.querySelectorAll('.preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const key = btn.dataset.preset;
-        const repl = document.querySelector('strudel-repl');
-        if (repl && presets[key]) {
-          repl.setAttribute('code', presets[key]);
+        if (strudelFrame && strudelPatterns[key]) {
+          strudelFrame.src = strudelUrl(strudelPatterns[key]);
+          document.querySelectorAll('.preset-btn').forEach(b => b.style.background = '');
           btn.style.background = 'rgba(57,255,143,0.15)';
-          setTimeout(() => btn.style.background = '', 500);
         }
       });
     });
