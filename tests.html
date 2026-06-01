@@ -100,7 +100,17 @@ h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;letter-spacing:-.02em;line-h
 .progress i{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,var(--accent-dim),var(--accent));transition:width .4s ease;box-shadow:0 0 12px var(--accent-glow)}
 
 .examgrid{display:grid;grid-template-columns:1fr 230px;gap:30px;margin-top:30px;align-items:start}
-@media(max-width:840px){.examgrid{grid-template-columns:1fr}.nav-side{order:-1}}
+@media(max-width:840px){
+  .examgrid{grid-template-columns:1fr;gap:22px;margin-top:22px}
+  .nav-side{position:static;order:0}
+  .nav-toggle{cursor:pointer;padding:2px 0}
+  .nav-toggle .chev{display:inline-block}
+  .nav-card.open .nav-toggle .chev{transform:rotate(180deg)}
+  .nav-body{display:none}
+  .nav-card.open .nav-body{display:block;margin-bottom:14px}
+  .qtext{font-size:18px}
+  .topbar{padding:11px 18px}
+}
 
 .qhead{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .qnum{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.08em}
@@ -153,7 +163,10 @@ h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;letter-spacing:-.02em;line-h
 /* navigator */
 .nav-side{position:sticky;top:78px}
 .nav-card{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);padding:18px}
-.nav-card h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:14px}
+.nav-card h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.nav-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:14px;text-align:left}
+.nav-toggle .chev{display:none;font-size:13px;color:var(--ink2);transition:transform .2s;font-family:var(--mono)}
+.nav-body{display:block}
 .qgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .qcell{aspect-ratio:1;border:1px solid var(--line2);border-radius:7px;font-family:var(--mono);font-size:11px;color:var(--ink3);
   display:grid;place-items:center;transition:.13s;font-weight:500}
@@ -237,7 +250,7 @@ h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;letter-spacing:-.02em;line-h
       <h1>Security+ Practice Exams</h1>
     </div>
   </div>
-  <p class="sub">Three full multiple-choice practice exams from Professor Messer's SY0-701 study set, made clickable and scorable. Pick an exam, choose your mode, and track your readiness by exam domain.<br><b>This is NOT A MOBILE FRIENDLY TEST SUITE</b></p>
+  <p class="sub">Three full multiple-choice practice exams from Professor Messer's SY0-701 study set, made clickable and scorable. Pick an exam, choose your mode, and track your readiness by exam domain.</p>
 
   <div class="divider"></div>
 
@@ -247,9 +260,7 @@ h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;letter-spacing:-.02em;line-h
       <div class="seg" id="modeSeg">
         <button data-mode="practice" class="on">Practice</button>
         <button data-mode="exam">Exam</button>
-        <a href="index.html">
-          <button data-mode="dev webpage">Back to Developer Webpage</button>
-        </a>
+        <a href="index.html" class="btn btn-ghost">Back to Developer Page</a>
       </div>
     </div>
     <div class="mode-help" id="modeHelp">Practice · instant feedback &amp; explanation after each question</div>
@@ -294,13 +305,15 @@ h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;letter-spacing:-.02em;line-h
     </div>
 
     <aside class="nav-side">
-      <div class="nav-card">
-        <h4>Navigator</h4>
-        <div class="qgrid" id="qGrid"></div>
-        <div class="legend">
-          <span><i class="dot" style="background:var(--accent-dim);border-color:var(--accent-dim)"></i> Answered</span>
-          <span><i class="dot" style="border-color:var(--amber)"></i> Flagged</span>
-          <span><i class="dot" style="outline:2px solid var(--accent);outline-offset:-1px"></i> Current</span>
+      <div class="nav-card" id="navCard">
+        <button class="nav-toggle" id="navToggle"><h4>Navigator</h4><span class="chev">▾</span></button>
+        <div class="nav-body">
+          <div class="qgrid" id="qGrid"></div>
+          <div class="legend">
+            <span><i class="dot" style="background:var(--accent-dim);border-color:var(--accent-dim)"></i> Answered</span>
+            <span><i class="dot" style="border-color:var(--amber)"></i> Flagged</span>
+            <span><i class="dot" style="outline:2px solid var(--accent);outline-offset:-1px"></i> Current</span>
+          </div>
         </div>
         <div class="submit-wrap"><button class="bigbtn next" id="submitBtn">Submit Exam</button></div>
       </div>
@@ -441,6 +454,7 @@ function startExam(L){
   const mt=$('examMode');mt.textContent=mode==='practice'?'Practice':'Exam';
   mt.className='tag '+(mode==='practice'?'practice':'exam');
   $('submitBtn').style.display='';
+  $('navCard').classList.remove('open');
   if(mode==='exam'){startTimer(90*60);}else{stopTimer();$('examTimer').textContent='';}
   show('exam');buildGrid();renderQ();
 }
@@ -462,7 +476,8 @@ function buildGrid(){
   DATA[S.exam].forEach((q,k)=>{
     const cell=document.createElement('button');
     cell.className='qcell';cell.textContent=k+1;
-    cell.onclick=()=>{S.i=k;renderQ();};
+    cell.onclick=()=>{S.i=k;renderQ();
+      if(window.matchMedia('(max-width:840px)').matches){$('navCard').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});}};
     g.appendChild(cell);
   });
 }
@@ -683,6 +698,7 @@ function buildReview(){
 }
 
 /* ---------- init ---------- */
+$('navToggle').onclick=()=>{ if(window.matchMedia('(max-width:840px)').matches) $('navCard').classList.toggle('open'); };
 renderHome();
 </script>
 </body>
